@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <% if(locals.fileLink!=null){ %>
+        <div style="margin-bottom: 1 rem;">
+
+            Your File is Uploaded!
+            <a href="<%=locals.fileLink%>">"<%=locals.fileLink%></a>
+        </div>
+  <% } %>  
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file">File:</label>
+        <input type="file" id="file" name="file" required>
+        <label for="file">Password:</label>
+        <input type="password" id="password" name="password" >
+        <button type="submit">Share</button>
+    </form>
+</body>
+<style>
+body {
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+form {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: auto 1fr;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+
+  /* Center the form */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+label {
+  font-size: 1rem;
+  color: #333;
+  text-align: right;
+}
+
+input[type="file"], input[type="password"], button {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+input[type="file"], input[type="password"] {
+  background-color: #f7f7f7;
+}
+
+button {
+  background-color: #2ecc71;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  /* Center the button */
+  display: inline-block;
+  margin-top: 1 rem;
+  left:200%;
+ 
+  
+}
+button:hover {
+  background-color: #27ae60;
+}
+
+@media screen and (max-width: 600px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</html>
