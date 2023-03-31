@@ -8,7 +8,17 @@ const app= express();
 const upload = multer({dest:"uploads"});
  app.use(express.urlencoded({extended:true}))
 
-mongoose.connect(process.env.DATABASE_URL);
+//const DATABASE_URL="mongodb+srv://sakshig4780:san.deep1@cluster0.sj2rw72.mongodb.net/FileSharing?retryWrites=true&w=majority"
+
+mongoose.connect(process.env.DATABASE_URL,{
+    
+    useUnifiedTopology: true
+}).then(()=>{
+    console.log("sucess");
+
+}).catch((err)=>{
+    console.log("sucess no" + err.message);
+})
 
 
 
