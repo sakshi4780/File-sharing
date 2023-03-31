@@ -17,21 +17,46 @@
       <a href="<%=locals.fileLink%>">"<%=locals.fileLink%></a>
     </div>
     <% } %>
-      <form action="/upload" method="post" enctype="multipart/form-data">
+      <form action="/upload" method="post" enctype="multipart/form-data" id="form">
         <label for="file">File:</label>
         <input type="file" id="file" name="file" required>
         <label for="file">Password:</label>
         <input type="password" id="password" name="password">
         <button type="submit">Share</button>
+        
+      </form>
+      <form action="/howtouse" id="how">
+        <button type="submit"  id="htu">How to use</button>
       </form>
 </body>
 <style>
+body{
+  overflow: hidden;
+}
+div{
+  position: fixed;
+  bottom:2vh;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow-x: hidden;
+}
+
+
+  
+  #htu,#how{
+    
+    display: block;
+     margin: 0 auto;
+     overflow-x: hidden;
+
+  }
   body {
     background-color: #f5f5f5;
     font-family: Arial, sans-serif;
+    
   }
 
-  form {
+  #form {
     display: grid;
     gap: 0.5rem;
     grid-template-columns: auto 1fr;

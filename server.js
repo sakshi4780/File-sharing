@@ -23,6 +23,7 @@ mongoose.connect(process.env.DATABASE_URL,{
 
 
 app.set("view engine","ejs")
+
 app.get("/",(req,res)=>{
     res.render("index")
 })
@@ -59,5 +60,12 @@ async function handleDownload(req,res){
     console.log(file.downloadCount);
     res.download(file.path,file.originalName);
 }
+app.get("/howtouse",(req,res)=>{
+    res.render("howtouse");
+   // redirect("/");
+});
+app.post("/",(req,res)=>{
+    res.render("index")
+})
 
 app.listen(process.env.PORT)
